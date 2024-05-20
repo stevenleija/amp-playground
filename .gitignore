@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*
+/src/aws-exports.js
+/src/ui-components/*
+/src/graphql/*
+/amplify/#current-cloud-backend/*
+/amplify/.config/*
+
+/amplify/backend/function/MFASMSSender/src/*.js
+/amplify/backend/function/mfaUploadDocument/src/*.js
+/amplify/backend/function/mfademoVerifyAuthChallengeResponse/src/*.js
+/amplify/backend/function/mfademoCreateAuthChallenge/src/*.js
+/amplify/backend/function/mfademoDefineAuthChallenge/src/*.js

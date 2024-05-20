@@ -1,0 +1,288 @@
+{
+  "api": {
+    "AdminQueries": {
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "ampplaygroundea5deb63ea5deb63"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "AdminQueries76c74a71"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "ampplaygroundea5deb63ea5deb63": {
+      "customAuth": false,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63PostConfirmation",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CreateAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63DefineAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL",
+          "FAMILY_NAME",
+          "GIVEN_NAME"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID"
+          ],
+          "category": "auth",
+          "resourceName": "ampplaygroundea5deb63ea5deb63"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "function": {
+    "AdminQueries76c74a71": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "ampplaygroundea5deb63ea5deb63"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ampplaygroundea5deb63ea5deb63CreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ampplaygroundea5deb63ea5deb63CustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ampplaygroundea5deb63ea5deb63DefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ampplaygroundea5deb63ea5deb63PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_AdminQueries76c74a71_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries76c74a71"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminQueries76c74a71_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueries76c74a71"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63CreateAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63CreateAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63CustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63CustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63CustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63CustomMessage_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63CustomMessage_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63DefineAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63DefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63DefineAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63DefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63PostConfirmation_GROUP": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63PostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63PostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse"
+        }
+      ]
+    }
+  }
+}

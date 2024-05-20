@@ -1,0 +1,146 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "resourceNameTruncated": "ampplaea5deb63",
+    "userPoolName": "ampplaygroundea5deb63_userpool_ea5deb63",
+    "autoVerifiedAttributes": [
+      "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+      "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+      "email",
+      "family_name",
+      "given_name"
+    ],
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": "7",
+    "userpoolClientWriteAttributes": [
+      "email",
+      "family_name",
+      "given_name"
+    ],
+    "userpoolClientReadAttributes": [
+      "email",
+      "family_name",
+      "given_name"
+    ],
+    "userpoolClientLambdaRole": "ampplaea5deb63_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "ea5deb63",
+    "resourceName": "ampplaygroundea5deb63ea5deb63",
+    "authSelections": "userPoolOnly",
+    "useDefault": "manual",
+    "usernameAttributes": [
+      "email"
+    ],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": {
+      "CreateAuthChallenge": [
+        "boilerplate-create-challenge"
+      ],
+      "CustomMessage": [
+        "verification-link",
+        "custom"
+      ],
+      "DefineAuthChallenge": [
+        "boilerplate-define-challenge"
+      ],
+      "PostConfirmation": [
+        "add-to-group"
+      ],
+      "VerifyAuthChallengeResponse": [
+        "boilerplate-verify"
+      ]
+    },
+    "hostedUI": false,
+    "userPoolGroupList": [
+      "Standard",
+      "Admin"
+    ],
+    "adminQueryGroup": "Admin",
+    "serviceName": "Cognito",
+    "verificationBucketName": "ampplaygroundea5deb63ea5deb63verificationbucket",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true,
+    "authRoleArn": {
+      "Fn::GetAtt": [
+        "AuthRole",
+        "Arn"
+      ]
+    },
+    "unauthRoleArn": {
+      "Fn::GetAtt": [
+        "UnauthRole",
+        "Arn"
+      ]
+    },
+    "breakCircularDependency": true,
+    "dependsOn": [
+      {
+        "category": "function",
+        "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      },
+      {
+        "category": "function",
+        "resourceName": "ampplaygroundea5deb63ea5deb63PostConfirmation",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      },
+      {
+        "category": "function",
+        "resourceName": "ampplaygroundea5deb63ea5deb63CreateAuthChallenge",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      },
+      {
+        "category": "function",
+        "resourceName": "ampplaygroundea5deb63ea5deb63DefineAuthChallenge",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      },
+      {
+        "category": "function",
+        "resourceName": "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      }
+    ],
+    "permissions": [
+      "{\n  \"policyName\": \"AddToGroupCognito\",\n  \"trigger\": \"PostConfirmation\",\n  \"effect\": \"Allow\",\n  \"actions\": [\n    \"cognito-idp:AdminAddUserToGroup\",\n    \"cognito-idp:GetGroup\",\n    \"cognito-idp:CreateGroup\"\n  ],\n  \"resource\": {\n    \"paramType\": \"!GetAtt\",\n    \"keys\": [\n      \"UserPool\",\n      \"Arn\"\n    ]\n  }\n}"
+    ],
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"CreateAuthChallenge\",\n    \"lambdaFunctionName\": \"ampplaygroundea5deb63ea5deb63CreateAuthChallenge\"\n  },\n  {\n    \"triggerType\": \"CustomMessage\",\n    \"lambdaFunctionName\": \"ampplaygroundea5deb63ea5deb63CustomMessage\"\n  },\n  {\n    \"triggerType\": \"DefineAuthChallenge\",\n    \"lambdaFunctionName\": \"ampplaygroundea5deb63ea5deb63DefineAuthChallenge\"\n  },\n  {\n    \"triggerType\": \"PostConfirmation\",\n    \"lambdaFunctionName\": \"ampplaygroundea5deb63ea5deb63PostConfirmation\"\n  },\n  {\n    \"triggerType\": \"VerifyAuthChallengeResponse\",\n    \"lambdaFunctionName\": \"ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse\"\n  }\n]",
+    "parentStack": {
+      "Ref": "AWS::StackId"
+    },
+    "authProviders": []
+  }
+}

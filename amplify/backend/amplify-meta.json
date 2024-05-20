@@ -1,0 +1,329 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ampplayground-dev-06d39-authRole",
+      "UnauthRoleArn": "arn:aws:iam::184944340258:role/amplify-ampplayground-dev-06d39-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::184944340258:role/amplify-ampplayground-dev-06d39-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
+      "UnauthRoleName": "amplify-ampplayground-dev-06d39-unauthRole",
+      "StackName": "amplify-ampplayground-dev-06d39",
+      "StackId": "arn:aws:cloudformation:us-east-1:184944340258:stack/amplify-ampplayground-dev-06d39/679655d0-16fc-11ef-851e-0e8ad69ab295",
+      "AmplifyAppId": "d2ap52n88yp5g6",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    }
+  },
+  "auth": {
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "ampplaygroundea5deb63ea5deb63",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID"
+          ]
+        }
+      ],
+      "lastPushTimeStamp": "2024-05-20T23:43:26.056Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/auth/userPoolGroups-cloudformation-template.json",
+        "logicalId": "authuserPoolGroups"
+      },
+      "output": {},
+      "lastPushDirHash": "/ufM3pkYWZxTmKGbzpVSlDGJ6E4="
+    },
+    "ampplaygroundea5deb63ea5deb63": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63PostConfirmation",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63CreateAuthChallenge",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63DefineAuthChallenge",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "customAuth": true,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL",
+          "FAMILY_NAME",
+          "GIVEN_NAME"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/auth/ampplaygroundea5deb63ea5deb63-cloudformation-template.json",
+        "logicalId": "authampplaygroundea5deb63ea5deb63"
+      },
+      "lastPushTimeStamp": "2024-05-20T23:43:26.814Z",
+      "output": {
+        "UserPoolId": "us-east-1_5s00nGu93",
+        "AppClientIDWeb": "4dr3oaln49e47sqk5dmubleu7n",
+        "AppClientID": "30i3ahitmvhs904e272e0vj6l5",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:184944340258:userpool/us-east-1_5s00nGu93",
+        "UserPoolName": "ampplaygroundea5deb63_userpool_ea5deb63"
+      },
+      "lastPushDirHash": "7UJ4wUnaYZAvpd1HeVdGF7jlFx8="
+    }
+  },
+  "function": {
+    "ampplaygroundea5deb63ea5deb63CustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-05-20T23:41:20.125Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-05-20T23:41:20.152Z",
+      "distZipFilename": "ampplaygroundea5deb63ea5deb63CustomMessage-374f4c69764339336368-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
+        "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63CustomMessage-374f4c69764339336368-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/function/ampplaygroundea5deb63ea5deb63CustomMessage-cloudformation-template.json",
+        "logicalId": "functionampplaygroundea5deb63ea5deb63CustomMessage"
+      },
+      "lastPushTimeStamp": "2024-05-20T23:43:26.814Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::184944340258:role/ampplaygroundea5deb63ea5deb63CustomMessage-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:184944340258:function:ampplaygroundea5deb63ea5deb63CustomMessage-dev",
+        "Name": "ampplaygroundea5deb63ea5deb63CustomMessage-dev",
+        "LambdaExecutionRole": "ampplaygroundea5deb63ea5deb63CustomMessage-dev"
+      },
+      "lastPushDirHash": "ZL7qPfajkJ5HKnKtKGuR6SDyxMA="
+    },
+    "ampplaygroundea5deb63ea5deb63PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-05-20T23:29:16.689Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-05-20T23:29:16.719Z",
+      "distZipFilename": "ampplaygroundea5deb63ea5deb63PostConfirmation-535a7161586470767730-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
+        "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63PostConfirmation-535a7161586470767730-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/function/ampplaygroundea5deb63ea5deb63PostConfirmation-cloudformation-template.json",
+        "logicalId": "functionampplaygroundea5deb63ea5deb63PostConfirmation"
+      },
+      "lastPushTimeStamp": "2024-05-20T23:43:26.072Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::184944340258:role/ampplaygroundea5deb63ea5deb63PostConfirmation-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:184944340258:function:ampplaygroundea5deb63ea5deb63PostConfirmation-dev",
+        "Name": "ampplaygroundea5deb63ea5deb63PostConfirmation-dev",
+        "LambdaExecutionRole": "ampplaygroundea5deb63ea5deb63PostConfirmation-dev"
+      },
+      "lastPushDirHash": "F9OsA8agCdIJS4q5BqfX06nlaCI="
+    },
+    "AdminQueries76c74a71": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true,
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "ampplaygroundea5deb63ea5deb63",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "lastBuildTimeStamp": "2024-05-20T23:29:19.223Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-05-20T23:29:19.245Z",
+      "distZipFilename": "AdminQueries76c74a71-444d526946454762566d-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
+        "s3Key": "amplify-builds/AdminQueries76c74a71-444d526946454762566d-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/function/AdminQueries76c74a71-cloudformation-template.json",
+        "logicalId": "functionAdminQueries76c74a71"
+      },
+      "lastPushTimeStamp": "2024-05-20T23:43:26.077Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::184944340258:role/AdminQueries76c74a71LambdaRole-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:184944340258:function:AdminQueries76c74a71-dev",
+        "Name": "AdminQueries76c74a71-dev",
+        "LambdaExecutionRole": "AdminQueries76c74a71LambdaRole-dev"
+      },
+      "lastPushDirHash": "LjMP47kFb0BgRTt9Mni8mBkKe8M="
+    },
+    "ampplaygroundea5deb63ea5deb63CreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::184944340258:role/ampplaygroundea5deb63ea5deb63CreateAuthChallenge-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:184944340258:function:ampplaygroundea5deb63ea5deb63CreateAuthChallenge-dev",
+        "Name": "ampplaygroundea5deb63ea5deb63CreateAuthChallenge-dev",
+        "LambdaExecutionRole": "ampplaygroundea5deb63ea5deb63CreateAuthChallenge-dev"
+      },
+      "lastPushTimeStamp": "2024-05-20T23:43:26.814Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/function/ampplaygroundea5deb63ea5deb63CreateAuthChallenge-cloudformation-template.json",
+        "logicalId": "functionampplaygroundea5deb63ea5deb63CreateAuthChallenge"
+      },
+      "lastBuildTimeStamp": "2024-05-20T23:41:21.012Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-05-20T23:41:21.041Z",
+      "distZipFilename": "ampplaygroundea5deb63ea5deb63CreateAuthChallenge-48634943315575466664-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
+        "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63CreateAuthChallenge-48634943315575466664-build.zip"
+      },
+      "lastPushDirHash": "3OSi9+flBbLLt4NT+KuQSBOuX5E="
+    },
+    "ampplaygroundea5deb63ea5deb63DefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-05-20T23:41:18.031Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-05-20T23:41:18.076Z",
+      "distZipFilename": "ampplaygroundea5deb63ea5deb63DefineAuthChallenge-6f396c4730574b4e346a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
+        "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63DefineAuthChallenge-6f396c4730574b4e346a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/function/ampplaygroundea5deb63ea5deb63DefineAuthChallenge-cloudformation-template.json",
+        "logicalId": "functionampplaygroundea5deb63ea5deb63DefineAuthChallenge"
+      },
+      "lastPushTimeStamp": "2024-05-20T23:43:26.814Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::184944340258:role/ampplaygroundea5deb63ea5deb63DefineAuthChallenge-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:184944340258:function:ampplaygroundea5deb63ea5deb63DefineAuthChallenge-dev",
+        "Name": "ampplaygroundea5deb63ea5deb63DefineAuthChallenge-dev",
+        "LambdaExecutionRole": "ampplaygroundea5deb63ea5deb63DefineAuthChallenge-dev"
+      },
+      "lastPushDirHash": "h0TTjklfb3zvff+U84YHMAbTuE4="
+    },
+    "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-05-20T23:41:19.168Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-05-20T23:41:19.212Z",
+      "distZipFilename": "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse-314966336731504b6568-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
+        "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse-314966336731504b6568-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/function/ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse-cloudformation-template.json",
+        "logicalId": "functionampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse"
+      },
+      "lastPushTimeStamp": "2024-05-20T23:43:26.814Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::184944340258:role/ampplaygroundea5deb63AuthChallengeResponsec7600204444c-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:184944340258:function:ampplaygroundea5deb63AuthChallengeResponsec7600204444c-dev",
+        "Name": "ampplaygroundea5deb63AuthChallengeResponsec7600204444c-dev",
+        "LambdaExecutionRole": "ampplaygroundea5deb63AuthChallengeResponsec7600204444c-dev"
+      },
+      "lastPushDirHash": "R0eIu/ELbQ0anBUdwZ9jd0mYDhs="
+    }
+  },
+  "api": {
+    "AdminQueries": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "ampplaygroundea5deb63ea5deb63",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "AdminQueries76c74a71",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/api/AdminQueries-cloudformation-template.json",
+        "logicalId": "apiAdminQueries"
+      },
+      "lastPushTimeStamp": "2024-05-20T23:43:26.088Z",
+      "output": {
+        "ApiName": "AdminQueries",
+        "RootUrl": "https://9xpzn3aasb.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "9xpzn3aasb"
+      },
+      "lastPushDirHash": "HTOVc4TLyuzi0zK6892V0rPpT4A="
+    }
+  }
+}
