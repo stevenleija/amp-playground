@@ -28,23 +28,23 @@
         "ampplaygroundea5deb63ea5deb63PostConfirmation": {
           "GROUP": "Standard",
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63PostConfirmation-6378464f706174664378-build.zip"
+          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63PostConfirmation-696d58496e75362f3856-build.zip"
         },
         "AdminQueries76c74a71": {
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/AdminQueries76c74a71-476d496f306f746f7934-build.zip"
+          "s3Key": "amplify-builds/AdminQueries76c74a71-7731476f39324d737a65-build.zip"
         },
         "ampplaygroundea5deb63ea5deb63CreateAuthChallenge": {
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63CreateAuthChallenge-69696f586865445a6265-build.zip"
+          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63CreateAuthChallenge-4f51764a5965482f6936-build.zip"
         },
         "ampplaygroundea5deb63ea5deb63DefineAuthChallenge": {
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63DefineAuthChallenge-6374556b61595a4e7865-build.zip"
+          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63DefineAuthChallenge-6b5962575136796e412f-build.zip"
         },
         "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse": {
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse-44684545504256315566-build.zip"
+          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse-5444475a4a5761694f37-build.zip"
         }
       },
       "api": {

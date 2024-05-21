@@ -1,7 +1,6 @@
-/**
- * @type {import('@types/aws-lambda').VerifyAuthChallengeResponseTriggerHandler}
- */
-exports.handler = async (event) => {
+import { VerifyAuthChallengeResponseTriggerEvent, VerifyAuthChallengeResponseTriggerHandler } from 'aws-lambda';
+
+export const handler: VerifyAuthChallengeResponseTriggerHandler = async (event: VerifyAuthChallengeResponseTriggerEvent, context: any): Promise<any> => {
     console.log(`PRE-EVENT: ${ JSON.stringify(event) }`);
 
     if (event?.request?.privateChallengeParameters?.answer === event?.request?.challengeAnswer) {

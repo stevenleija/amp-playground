@@ -175,9 +175,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-amplify/ui-react@npm:^6.1.11":
-  version: 6.1.11
-  resolution: "@aws-amplify/ui-react@npm:6.1.11"
+"@aws-amplify/ui-react@npm:^6.1.12":
+  version: 6.1.12
+  resolution: "@aws-amplify/ui-react@npm:6.1.12"
   dependencies:
     "@aws-amplify/ui": "npm:6.0.16"
     "@aws-amplify/ui-react-core": "npm:3.0.16"
@@ -195,7 +195,7 @@ __metadata:
   peerDependenciesMeta:
     aws-amplify:
       optional: true
-  checksum: 10c0/68c3b458653f4df816bbdf63f0015e02455966da6c4fe2aabf47ec42ac2c8455ee2bfce96ab49f676944a585b1c39e2412a98815050e6515ae8e66ca572445d5
+  checksum: 10c0/120118c3a7ad49801e56377dd74670e2cc068f7784d527b190fe9eed21f4628e2f8e289ddf7245e6f14ec213d94d0524538e410ace4c80c34f15422de322d393
   languageName: node
   linkType: hard
 
@@ -4005,7 +4005,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "amp-playground@workspace:."
   dependencies:
-    "@aws-amplify/ui-react": "npm:^6.1.11"
+    "@aws-amplify/ui-react": "npm:^6.1.12"
     "@aws-crypto/client-node": "npm:~4.0.0"
     "@aws-crypto/sha256-js": "npm:^5.2.0"
     "@types/react": "npm:^18.3.2"
@@ -4015,7 +4015,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     "@vitejs/plugin-react-swc": "npm:^3.6.0"
     aws-amplify: "npm:^6.3.2"
-    aws-sdk: "npm:^2.1624.0"
+    aws-sdk: "npm:^2.1625.0"
     crypto-secure-random-digit: "npm:^1.0.10"
     eslint: "npm:^8.57.0"
     eslint-plugin-react-hooks: "npm:^4.6.2"
@@ -4137,9 +4137,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:^2.1624.0":
-  version: 2.1624.0
-  resolution: "aws-sdk@npm:2.1624.0"
+"aws-sdk@npm:^2.1625.0":
+  version: 2.1625.0
+  resolution: "aws-sdk@npm:2.1625.0"
   dependencies:
     buffer: "npm:4.9.2"
     events: "npm:1.1.1"
@@ -4151,7 +4151,7 @@ __metadata:
     util: "npm:^0.12.4"
     uuid: "npm:8.0.0"
     xml2js: "npm:0.6.2"
-  checksum: 10c0/3235de80419dd8565f9e31dd0ca21147b57c466fb14226ed07a6e03d1a9b6c5a8c00d910ed15aa16a32bba2f7a607231a2cc9e304e4f909d729d6924b47f8ec8
+  checksum: 10c0/405c10444d75aac557c091e148cb1eb005eff30e44192cb2e367c34fc689e50711548d1ab42dfd8ff6f0cfdcbd712c899bc057a109a3b25d5055ee329de9a93f
   languageName: node
   linkType: hard
 

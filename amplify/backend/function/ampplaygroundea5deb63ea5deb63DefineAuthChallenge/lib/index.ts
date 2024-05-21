@@ -1,4 +1,4 @@
-import { DefineAuthChallengeTriggerHandler, DefineAuthChallengeTriggerEvent } from 'aws-lambda';
+import { DefineAuthChallengeTriggerEvent, DefineAuthChallengeTriggerHandler } from 'aws-lambda';
 /**
  * @fileoverview
  *
@@ -15,7 +15,7 @@ const moduleNames: string[] = process.env.MODULES.split(',');
 /**
  * The array of imported modules.
  */
-const modules: { handler: (event: any, context: any) => Promise<any> }[] = moduleNames.map((name) => require(`./${name}`));
+const modules: { handler: (event: any, context: any) => Promise<any> }[] = moduleNames.map((name) => require(`./${ name }`));
 
 
 /**

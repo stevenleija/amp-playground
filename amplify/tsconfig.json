@@ -5,6 +5,7 @@
         "allowSyntheticDefaultImports": true,
         "lib": ["dom", "esnext"],
         "module": "commonjs",
+        "sourceMap" : true,
         "moduleResolution": "node",
         "skipLibCheck": true,
         "resolveJsonModule": true

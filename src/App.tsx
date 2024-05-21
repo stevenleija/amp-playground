@@ -9,7 +9,6 @@ import amplifyconfig from './amplifyconfiguration.json';
 
 Amplify.configure(amplifyconfig);
 
-
 export default function App() {
     const [currentPainting, setCurrentPainting] = React.useState(PAINTINGS[0]);
     const [image, setImage] = React.useState(PAINTINGS[0].src);

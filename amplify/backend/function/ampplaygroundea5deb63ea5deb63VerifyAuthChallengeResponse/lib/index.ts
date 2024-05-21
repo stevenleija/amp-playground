@@ -5,6 +5,8 @@
  * specified in the `MODULES` env var, located at `./${MODULE}`.
  */
 
+import { VerifyAuthChallengeResponseTriggerHandler, VerifyAuthChallengeResponseTriggerEvent } from 'aws-lambda';
+
 /**
  * The names of modules to load are stored as a comma-delimited string in the
  * `MODULES` env var.
@@ -22,7 +24,7 @@ const modules = moduleNames.map((name) => require(`./${ name }`));
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  *
  */
-exports.handler = async (event, context) => {
+export const handler: VerifyAuthChallengeResponseTriggerHandler = async (event: VerifyAuthChallengeResponseTriggerEvent, context: any): Promise<any> => {
     /**
      * Instead of naively iterating over all handlers, run them concurrently with
      * `await Promise.all(...)`. This would otherwise just be determined by the
