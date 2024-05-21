@@ -51,7 +51,6 @@
         "boilerplate-create-challenge"
       ],
       "CustomMessage": [
-        "verification-link",
         "custom"
       ],
       "DefineAuthChallenge": [
@@ -71,7 +70,6 @@
     ],
     "adminQueryGroup": "Admin",
     "serviceName": "Cognito",
-    "verificationBucketName": "ampplaygroundea5deb63ea5deb63verificationbucket",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true,
     "authRoleArn": {

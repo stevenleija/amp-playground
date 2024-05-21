@@ -1,14 +1,13 @@
 {
   "trigger": true,
   "modules": [
-    "verification-link",
     "custom"
   ],
   "parentResource": "ampplaygroundea5deb63ea5deb63",
   "functionName": "ampplaygroundea5deb63ea5deb63CustomMessage",
   "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage",
   "parentStack": "auth",
-  "triggerEnvs": "[\n  {\n    \"key\": \"RESOURCENAME\",\n    \"value\": \"resourceName\"\n  }\n]",
+  "triggerEnvs": "[]",
   "triggerDir": "/snapshot/amplify-cli/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/CustomMessage",
   "triggerTemplate": "CustomMessage.json.ejs",
   "triggerEventPath": "CustomMessage.event.json",

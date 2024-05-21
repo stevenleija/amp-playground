@@ -28,7 +28,7 @@
           ]
         }
       ],
-      "lastPushTimeStamp": "2024-05-21T00:49:01.563Z",
+      "lastPushTimeStamp": "2024-05-21T15:54:19.184Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/auth/userPoolGroups-cloudformation-template.json",
         "logicalId": "authuserPoolGroups"
@@ -113,7 +113,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/auth/ampplaygroundea5deb63ea5deb63-cloudformation-template.json",
         "logicalId": "authampplaygroundea5deb63ea5deb63"
       },
-      "lastPushTimeStamp": "2024-05-21T00:49:01.565Z",
+      "lastPushTimeStamp": "2024-05-21T15:54:19.182Z",
       "output": {
         "UserPoolId": "us-east-1_5s00nGu93",
         "AppClientIDWeb": "4dr3oaln49e47sqk5dmubleu7n",
@@ -317,7 +317,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-ampplayground-dev-06d39-deployment/amplify-cfn-templates/api/AdminQueries-cloudformation-template.json",
         "logicalId": "apiAdminQueries"
       },
-      "lastPushTimeStamp": "2024-05-21T00:49:01.577Z",
+      "lastPushTimeStamp": "2024-05-21T15:54:19.054Z",
       "output": {
         "ApiName": "AdminQueries",
         "RootUrl": "https://9xpzn3aasb.execute-api.us-east-1.amazonaws.com/dev",
