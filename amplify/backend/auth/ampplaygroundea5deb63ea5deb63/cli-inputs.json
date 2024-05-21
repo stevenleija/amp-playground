@@ -90,24 +90,6 @@
     "dependsOn": [
       {
         "category": "function",
-        "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage",
-        "triggerProvider": "Cognito",
-        "attributes": [
-          "Arn",
-          "Name"
-        ]
-      },
-      {
-        "category": "function",
-        "resourceName": "ampplaygroundea5deb63ea5deb63PostConfirmation",
-        "triggerProvider": "Cognito",
-        "attributes": [
-          "Arn",
-          "Name"
-        ]
-      },
-      {
-        "category": "function",
         "resourceName": "ampplaygroundea5deb63ea5deb63CreateAuthChallenge",
         "triggerProvider": "Cognito",
         "attributes": [
@@ -117,7 +99,25 @@
       },
       {
         "category": "function",
+        "resourceName": "ampplaygroundea5deb63ea5deb63CustomMessage",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      },
+      {
+        "category": "function",
         "resourceName": "ampplaygroundea5deb63ea5deb63DefineAuthChallenge",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      },
+      {
+        "category": "function",
+        "resourceName": "ampplaygroundea5deb63ea5deb63PostConfirmation",
         "triggerProvider": "Cognito",
         "attributes": [
           "Arn",
