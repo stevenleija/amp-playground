@@ -9,11 +9,15 @@
  * The names of modules to load are stored as a comma-delimited string in the
  * `MODULES` env var.
  */
-const moduleNames = process.env.MODULES.split(',');
+// const moduleNames = process.env.MODULES.split(',');
+const moduleNames: string[] = process.env.MODULES.split(',');
+
 /**
  * The array of imported modules.
  */
-const modules = moduleNames.map((name) => import(`./${ name }`));
+// const modules = moduleNames.map((name) => import(`./${ name }`));
+const modules: { handler: (event: any, context: any) => Promise<any> }[] = moduleNames.map((name) => require(`./${name}`));
+
 
 /**
  * This async handler iterates over the given modules and awaits them.
@@ -22,7 +26,7 @@ const modules = moduleNames.map((name) => import(`./${ name }`));
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  *
  */
-exports.handler = async (event, context) => {
+export const handler = async (event: any, context: any): Promise<any> => {
     /**
      * Instead of naively iterating over all handlers, run them concurrently with
      * `await Promise.all(...)`. This would otherwise just be determined by the
@@ -31,3 +35,14 @@ exports.handler = async (event, context) => {
     await Promise.all(modules.map((module) => module.handler(event, context)));
     return event;
 };
+
+/*export const handler = async (event, context) => {
+    /!**
+     * Instead of naively iterating over all handlers, run them concurrently with
+     * `await Promise.all(...)`. This would otherwise just be determined by the
+     * order of names in the `MODULES` var.
+     *!/
+    await Promise.all(modules.map((module) => module.handler(event, context)));
+
+    return event;
+};*/

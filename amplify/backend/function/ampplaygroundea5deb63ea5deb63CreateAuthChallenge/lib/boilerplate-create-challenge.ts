@@ -9,7 +9,7 @@ const ses = new SES();
 /**
  * @type {import('@types/aws-lambda').CreateAuthChallengeTriggerHandler}
  */
-export const handler = async (event) => {
+export const handler = async (event: any, context: any): Promise<any> => {
     console.log(`PRE-EVENT: ${ JSON.stringify(event) }`);
 
     /*if (event?.request?.session?.length === 1 && event.request.challengeName === 'CUSTOM_CHALLENGE') {
