@@ -79,7 +79,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-amplify/core@npm:6.2.1, @aws-amplify/core@npm:^6.2.1":
+"@aws-amplify/core@npm:6.2.1":
   version: 6.2.1
   resolution: "@aws-amplify/core@npm:6.2.1"
   dependencies:
@@ -199,7 +199,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-amplify/ui@npm:6.0.16, @aws-amplify/ui@npm:^6.0.16":
+"@aws-amplify/ui@npm:6.0.16":
   version: 6.0.16
   resolution: "@aws-amplify/ui@npm:6.0.16"
   dependencies:
@@ -4005,8 +4005,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "amp-playground@workspace:."
   dependencies:
-    "@aws-amplify/core": "npm:^6.2.1"
-    "@aws-amplify/ui": "npm:^6.0.16"
     "@aws-amplify/ui-react": "npm:^6.1.11"
     "@aws-crypto/client-node": "npm:~4.0.0"
     "@aws-crypto/sha256-js": "npm:^5.2.0"
@@ -4027,7 +4025,6 @@ __metadata:
     sass: "npm:^1.77.2"
     typescript: "npm:^5.4.5"
     vite: "npm:^5.2.11"
-    xstate: "npm:^5.13.0"
   languageName: unknown
   linkType: soft
 
@@ -7255,17 +7252,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xstate@npm:^4.33.6":
+"xstate@npm:4.38.3":
   version: 4.38.3
   resolution: "xstate@npm:4.38.3"
   checksum: 10c0/8a2063743517390107275113bca0e757dba99102e7d57d40cf656b5cc03a6f2c5e10fbf3752294d9d29fbe1d8757bb9a54f54c934a22f205a237956dd10dcd0f
-  languageName: node
-  linkType: hard
-
-"xstate@npm:^5.13.0":
-  version: 5.13.0
-  resolution: "xstate@npm:5.13.0"
-  checksum: 10c0/7369e03ec11849ab3e147cf06420e84cfa2753decd5865eb18c3e34ca43bf706ca88f76262a29c522bbc8d2a7661668f6acea1359d5f401a616c798a02545937
   languageName: node
   linkType: hard
 

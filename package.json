@@ -10,8 +10,6 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@aws-amplify/core": "^6.2.1",
-        "@aws-amplify/ui": "^6.0.16",
         "@aws-amplify/ui-react": "^6.1.11",
         "@aws-crypto/client-node": "~4.0.0",
         "@aws-crypto/sha256-js": "^5.2.0",
@@ -19,8 +17,7 @@
         "aws-sdk": "^2.1623.0",
         "crypto-secure-random-digit": "^1.0.10",
         "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "xstate": "^5.13.0"
+        "react-dom": "^18.3.1"
     },
     "devDependencies": {
         "@types/react": "^18.3.2",
@@ -35,6 +32,9 @@
         "sass": "^1.77.2",
         "typescript": "^5.4.5",
         "vite": "^5.2.11"
+    },
+    "resolutions": {
+        "xstate": "4.38.3"
     },
     "packageManager": "yarn@4.2.2+sha512.c44e283c54e02de9d1da8687025b030078c1b9648d2895a65aab8e64225bfb7becba87e1809fc0b4b6778bbd47a1e2ab6ac647de4c5e383a53a7c17db6c3ff4b"
 }
