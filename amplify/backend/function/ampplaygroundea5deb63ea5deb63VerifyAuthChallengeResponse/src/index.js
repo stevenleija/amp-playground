@@ -23,13 +23,11 @@ const modules = moduleNames.map((name) => require(`./${ name }`));
  *
  */
 exports.handler = async (event, context) => {
-    console.log(`PRE-EVENT: ${ JSON.stringify(event) }`);
     /**
      * Instead of naively iterating over all handlers, run them concurrently with
      * `await Promise.all(...)`. This would otherwise just be determined by the
      * order of names in the `MODULES` var.
      */
     await Promise.all(modules.map((module) => module.handler(event, context)));
-    console.log(`POST-EVENT: ${ JSON.stringify(event) }`);
     return event;
 };

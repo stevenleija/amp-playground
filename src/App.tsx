@@ -34,9 +34,7 @@ export default function App() {
                     username,
                     password,
                     options: {
-                        clientMetadata: {
-                            authFlowType: 'CUSTOM_WITHOUT_SRP'
-                        }
+                        authFlowType: 'CUSTOM_WITH_SRP'
                     }
                 });
 
@@ -59,7 +57,6 @@ export default function App() {
                 throw new Error(err.message, { cause: err });
             }
         }
-
     }
 
     const handleAddToCart = () => {

@@ -1,15 +1,9 @@
 import { randomDigits } from 'crypto-secure-random-digit';
 import { SES } from 'aws-sdk';
-// const digitGenerator = require('crypto-secure-random-digit');
-// const SES = require('aws-sdk');
-// const randomDigits = digitGenerator.randomDigits();
+import { CreateAuthChallengeTriggerEvent, CreateAuthChallengeTriggerHandler } from 'aws-lambda';
+const ses: SES = new SES();
 
-const ses = new SES();
-
-/**
- * @type {import('@types/aws-lambda').CreateAuthChallengeTriggerHandler}
- */
-export const handler = async (event: any, context: any): Promise<any> => {
+export const handler: CreateAuthChallengeTriggerHandler = async (event: CreateAuthChallengeTriggerEvent, context: any): Promise<any> => {
     console.log(`PRE-EVENT: ${ JSON.stringify(event) }`);
 
     /*if (event?.request?.session?.length === 1 && event.request.challengeName === 'CUSTOM_CHALLENGE') {
@@ -23,7 +17,7 @@ export const handler = async (event: any, context: any): Promise<any> => {
     }*/
 
     // https://aws.amazon.com/blogs/mobile/implementing-passwordless-email-authentication-with-amazon-cognito/
-    let secretLoginCode;
+    let secretLoginCode: string;
     if (!event.request.session || !event.request.session.length) {
 
         // This is a new auth session
@@ -60,7 +54,7 @@ export const handler = async (event: any, context: any): Promise<any> => {
     return event;
 };
 
-async function sendEmail(emailAddress, secretLoginCode) {
+async function sendEmail(emailAddress: string, secretLoginCode: string) {
     const params = {
         Destination: { ToAddresses: [emailAddress] },
         Message: {

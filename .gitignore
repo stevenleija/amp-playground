@@ -38,3 +38,8 @@ amplifyconfiguration*
 /amplify/backend/function/mfademoVerifyAuthChallengeResponse/src/*.js
 /amplify/backend/function/mfademoCreateAuthChallenge/src/*.js
 /amplify/backend/function/mfademoDefineAuthChallenge/src/*.js
+!/amplify/backend/function/ampplaygroundea5deb63ea5deb63CreateAuthChallenge/src/index.js
+!/amplify/backend/function/ampplaygroundea5deb63ea5deb63CreateAuthChallenge/src/boilerplate-create-challenge.js
+!/amplify/backend/function/ampplaygroundea5deb63ea5deb63DefineAuthChallenge/src/boilerplate-define-challenge.js
+
+!/amplify/backend/function/ampplaygroundea5deb63ea5deb63DefineAuthChallenge/src/index.js

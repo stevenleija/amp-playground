@@ -1,3 +1,5 @@
+import { CreateAuthChallengeTriggerEvent, CreateAuthChallengeTriggerHandler } from 'aws-lambda';
+
 /**
  * @fileoverview
  *
@@ -9,13 +11,11 @@
  * The names of modules to load are stored as a comma-delimited string in the
  * `MODULES` env var.
  */
-// const moduleNames = process.env.MODULES.split(',');
 const moduleNames: string[] = process.env.MODULES.split(',');
 
 /**
  * The array of imported modules.
  */
-// const modules = moduleNames.map((name) => import(`./${ name }`));
 const modules: { handler: (event: any, context: any) => Promise<any> }[] = moduleNames.map((name) => require(`./${name}`));
 
 
@@ -23,10 +23,8 @@ const modules: { handler: (event: any, context: any) => Promise<any> }[] = modul
  * This async handler iterates over the given modules and awaits them.
  *
  * @see https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html#nodejs-handler-async
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- *
  */
-export const handler = async (event: any, context: any): Promise<any> => {
+export const handler: CreateAuthChallengeTriggerHandler = async (event: CreateAuthChallengeTriggerEvent, context: any): Promise<any> => {
     /**
      * Instead of naively iterating over all handlers, run them concurrently with
      * `await Promise.all(...)`. This would otherwise just be determined by the

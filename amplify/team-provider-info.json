@@ -23,28 +23,28 @@
           "EMAILSUBJECT": "Custom Messsage Email Subject",
           "EMAILMESSAGE": "Custom message email body",
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63CustomMessage-4b756732335355584d30-build.zip"
+          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63CustomMessage-37775337677536373662-build.zip"
         },
         "ampplaygroundea5deb63ea5deb63PostConfirmation": {
           "GROUP": "Standard",
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63PostConfirmation-536367796a4131554e4f-build.zip"
+          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63PostConfirmation-6378464f706174664378-build.zip"
         },
         "AdminQueries76c74a71": {
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/AdminQueries76c74a71-37497047344977674f51-build.zip"
+          "s3Key": "amplify-builds/AdminQueries76c74a71-476d496f306f746f7934-build.zip"
         },
         "ampplaygroundea5deb63ea5deb63CreateAuthChallenge": {
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63CreateAuthChallenge-47454a726f4655706a71-build.zip"
+          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63CreateAuthChallenge-69696f586865445a6265-build.zip"
         },
         "ampplaygroundea5deb63ea5deb63DefineAuthChallenge": {
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63DefineAuthChallenge-7664706c433869524744-build.zip"
+          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63DefineAuthChallenge-6374556b61595a4e7865-build.zip"
         },
         "ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse": {
           "deploymentBucketName": "amplify-ampplayground-dev-06d39-deployment",
-          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse-47314534685664684579-build.zip"
+          "s3Key": "amplify-builds/ampplaygroundea5deb63ea5deb63VerifyAuthChallengeResponse-44684545504256315566-build.zip"
         }
       },
       "api": {
