@@ -4015,7 +4015,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     "@vitejs/plugin-react-swc": "npm:^3.6.0"
     aws-amplify: "npm:^6.3.2"
-    aws-sdk: "npm:^2.1623.0"
+    aws-sdk: "npm:^2.1624.0"
     crypto-secure-random-digit: "npm:^1.0.10"
     eslint: "npm:^8.57.0"
     eslint-plugin-react-hooks: "npm:^4.6.2"
@@ -4137,7 +4137,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:^2.1623.0":
+"aws-sdk@npm:^2.1624.0":
   version: 2.1624.0
   resolution: "aws-sdk@npm:2.1624.0"
   dependencies:
