@@ -22,12 +22,15 @@ export const handler: CreateAuthChallengeTriggerHandler = async (event: CreateAu
     try {
         let secretLoginCode: string;
 
-        if (!event.request.session || !event.request.session.length) {
+        // if (!event.request.session || !event.request.session.length) {
+        if (!event?.request?.session || event?.request?.session?.length === 0) {
+            console.log(1);
             // This is a new auth session
             // Generate a new secret login code and mail it to the user
             secretLoginCode = randomDigits(6).join('');
             // await sendEmail(event.request.userAttributes.email, secretLoginCode);
         } else {
+            console.log(2);
             // There's an existing session. Don't generate new digits but
             // re-use the code from the current session. This allows the user to
             // make a mistake when keying in the code and to then retry, rather
