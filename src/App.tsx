@@ -24,7 +24,6 @@ export default function App() {
                 username,
                 password
             } = input;
-            const challengeResponse = 'the answer for the challenge';
             try {
                 const {
                     nextStep,
@@ -35,24 +34,30 @@ export default function App() {
                     options: {
                         authFlowType: 'CUSTOM_WITH_SRP'
                     }
+                }).catch((err) => {
+                    console.error(err);
+
+                    // @ts-expect-error expected
+                    throw new Error(err.message, { cause: err });
                 });
 
                 console.log(`nextStep: ${ JSON.stringify(nextStep) }`);
                 console.log(`signUpStep: ${ nextStep.signInStep }`);
                 console.log(`isSignedIn: ${ isSignedIn }`);
+                const challengeResponse = 'the answer for the challenge';
 
                 if (nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_CUSTOM_CHALLENGE') {
                     const output = await confirmSignIn({ challengeResponse })
                         .catch(err => {
                             console.error(err);
-                            // @ts-ignore
+                            // @ts-expect-error expected
                             throw new Error(err.message, { cause: err });
                         });
                     console.log(output);
                 }
             } catch (err) {
                 console.error(err);
-                // @ts-ignore
+                // @ts-expect-error expected
                 throw new Error(err.message, { cause: err });
             }
         }
@@ -71,7 +76,7 @@ export default function App() {
     };
 
     return (
-        // @ts-ignore
+        // @ts-expect-error expected
         <Authenticator services={ services }>
             { ({
                 signOut,
