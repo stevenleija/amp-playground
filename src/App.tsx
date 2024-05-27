@@ -2,13 +2,10 @@ import { Alert, Authenticator, Badge, Button, Card, Collection, Divider, Flex, H
 import '@aws-amplify/ui-react/styles.css';
 import * as React from 'react';
 import { PAINTINGS } from './paintings';
-// import { Amplify, Auth } from 'aws-amplify';
 import { confirmSignIn, signIn, SignInInput } from 'aws-amplify/auth';
-// import { Auth } from 'aws-amplify';
 
 import amplifyconfig from './amplifyconfiguration.json';
 import { Amplify } from 'aws-amplify';
-import { SignIn } from '@aws-amplify/ui-react/dist/types/components/Authenticator/SignIn';
 
 Amplify.configure(amplifyconfig);
 
@@ -21,7 +18,7 @@ export default function App() {
     const [error, setError] = React.useState(false);
 
     const services = {
-        async handleSignIn(input: SignIn) {
+        async handleSignIn(input: SignInInput) {
             console.log(input);
             const {
                 username,
