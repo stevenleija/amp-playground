@@ -32,7 +32,7 @@ export default function App() {
                     username,
                     password,
                     options: {
-                        authFlowType: 'USER_SRP_AUTH'
+                        authFlowType: 'CUSTOM_WITHOUT_SRP'
                     }
                 }).catch((err) => {
                     console.error(err);
@@ -46,7 +46,7 @@ export default function App() {
                 console.log(`isSignedIn: ${ isSignedIn }`);
                 const challengeResponse = 'the answer for the challenge';
 
-                if (nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_CUSTOM_CHALLENGE') {
+                if (nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_CUSTOM_CHALLENGE' || nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_NEW_PASSWORD_REQUIRED') {
                     const output = await confirmSignIn({ challengeResponse })
                         .catch(err => {
                             console.error(err);

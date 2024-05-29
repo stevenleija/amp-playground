@@ -28,6 +28,7 @@ export const handler: CreateAuthChallengeTriggerHandler = async (event: CreateAu
             // This is a new auth session
             // Generate a new secret login code and mail it to the user
             secretLoginCode = randomDigits(6).join('');
+            console.log(`secretLoginCode: ${ secretLoginCode }`);
             // await sendEmail(event.request.userAttributes.email, secretLoginCode);
         } else {
             console.log(2);
@@ -39,14 +40,15 @@ export const handler: CreateAuthChallengeTriggerHandler = async (event: CreateAu
             console.log(`previousChallenge ${ previousChallenge }`);
             console.log(`previousChallenge.challengeMetadata ${ previousChallenge.challengeMetadata }`);
             secretLoginCode = previousChallenge.challengeMetadata?.match(/CODE-(\d*)/)![1];
+            console.log(`secretLoginCode: ${ secretLoginCode }`);
         }
 
         // This is sent back to the client app
-        event.response.publicChallengeParameters = { email: event.request.userAttributes.email };
+        event.response.publicChallengeParameters.email = event.request.userAttributes.email;
 
         // Add the secret login code to the private challenge parameters
         // so it can be verified by the "Verify Auth Challenge Response" trigger
-        event.response.privateChallengeParameters = { secretLoginCode };
+        event.response.privateChallengeParameters.secretLoginCode = secretLoginCode;
 
         // Add the secret login code to the session so it is available
         // in a next invocation of the "Create Auth Challenge" trigger

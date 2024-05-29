@@ -17,7 +17,7 @@
         "@aws-crypto/client-node": "~4.0.0",
         "@aws-crypto/sha256-js": "^5.2.0",
         "aws-amplify": "^6.3.4",
-        "aws-sdk": "^2.1628.0",
+        "aws-sdk": "^2.1629.0",
         "crypto-secure-random-digit": "^1.0.10",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
@@ -26,8 +26,8 @@
         "@types/aws-lambda": "^8.10.138",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
-        "@typescript-eslint/eslint-plugin": "^7.10.0",
-        "@typescript-eslint/parser": "^7.10.0",
+        "@typescript-eslint/eslint-plugin": "^7.11.0",
+        "@typescript-eslint/parser": "^7.11.0",
         "@vitejs/plugin-react": "^4.3.0",
         "@vitejs/plugin-react-swc": "^3.7.0",
         "eslint": "^8.57.0",
@@ -35,7 +35,7 @@
         "eslint-plugin-react-refresh": "^0.4.7",
         "sass": "^1.77.2",
         "typescript": "^5.4.5",
-        "vite": "^5.2.11"
+        "vite": "^5.2.12"
     },
     "resolutions": {
         "xstate": "4.38.3"
