@@ -1,11 +1,14 @@
-import { Alert, Authenticator, Badge, Button, Card, Collection, Divider, Flex, Heading, Image, Rating, SelectField, StepperField, SwitchField, Text, View } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import * as React from 'react';
-import { PAINTINGS } from './paintings';
-import { confirmSignIn, signIn, SignInInput } from 'aws-amplify/auth';
-
+import { useState } from 'react';
+import { CognitoIdentityProviderClient, InitiateAuthCommand, InitiateAuthCommandOutput, RespondToAuthChallengeCommand } from '@aws-sdk/client-cognito-identity-provider';
 import amplifyconfig from './amplifyconfiguration.json';
 import { Amplify } from 'aws-amplify';
+import { AuthError, confirmSignIn, ConfirmSignInOutput, signIn, SignInInput, SignInOutput } from 'aws-amplify/auth';
+import { PAINTINGS } from './paintings.ts';
+import { Authenticator, Badge, Button, Card, Collection, Divider, Flex, Heading, Image, Rating, SelectField, StepperField, SwitchField, Text, View } from '@aws-amplify/ui-react';
+
+const client = new CognitoIdentityProviderClient({ region: 'us-east-1' });
 
 Amplify.configure(amplifyconfig);
 
@@ -16,6 +19,10 @@ export default function App() {
     const [quantity, setQuantity] = React.useState(1);
     const [size, setSize] = React.useState('');
     const [error, setError] = React.useState(false);
+    const [session, setSession] = useState(null);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [otp, setOtp] = useState('');
 
     const services = {
         async handleSignIn(input: SignInInput) {
@@ -24,36 +31,44 @@ export default function App() {
                 username,
                 password
             } = input;
+
+            const signInOptions: SignInInput = {
+                username,
+                password,
+                options: {
+                    authFlowType: 'CUSTOM_WITH_SRP'
+                }
+            };
+
+
             try {
-                const {
-                    nextStep,
-                    isSignedIn
-                } = await signIn({
-                    username,
-                    password,
-                    options: {
-                        authFlowType: 'CUSTOM_WITHOUT_SRP'
-                    }
-                }).catch((err) => {
+                const signInOutput: SignInOutput = await signIn(signInOptions).catch((err: AuthError) => {
                     console.error(err);
 
                     // @ts-expect-error expected
                     throw new Error(err.message, { cause: err });
                 });
 
+                console.log(signInOutput);
+
+                const {
+                    nextStep,
+                    isSignedIn
+                } = signInOutput
+
                 console.log(`nextStep: ${ JSON.stringify(nextStep) }`);
-                console.log(`signUpStep: ${ nextStep.signInStep }`);
+                console.log(`signInStep: ${ nextStep.signInStep }`);
                 console.log(`isSignedIn: ${ isSignedIn }`);
                 const challengeResponse = 'the answer for the challenge';
 
-                if (nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_CUSTOM_CHALLENGE' || nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_NEW_PASSWORD_REQUIRED') {
-                    const output = await confirmSignIn({ challengeResponse })
-                        .catch(err => {
+                if (nextStep?.signInStep === 'CONFIRM_SIGN_IN_WITH_CUSTOM_CHALLENGE') {
+                   /* const output: ConfirmSignInOutput = await confirmSignIn({ challengeResponse })
+                        .catch((err: AuthError) => {
                             console.error(err);
                             // @ts-expect-error expected
                             throw new Error(err.message, { cause: err });
                         });
-                    console.log(output);
+                    console.log(output);*/
                 }
             } catch (err) {
                 console.error(err);
@@ -62,6 +77,51 @@ export default function App() {
             }
         }
     }
+
+    const handleEmailSubmit = async (event: any) => {
+        event.preventDefault();
+
+        // console.log(JSON.stringify(event, null, 2));
+        console.log(event);
+
+        const command = new InitiateAuthCommand({
+            AuthFlow: 'CUSTOM_AUTH',
+            ClientId: '4dr3oaln49e47sqk5dmubleu7n',
+            AuthParameters: {
+                'USERNAME': email,
+                'PASSWORD': password
+            }
+        });
+
+        try {
+            const response: InitiateAuthCommandOutput = await client.send(command);
+            console.log(response);
+            setSession(response.Session);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const handleCodeSubmit = async (event: any) => {
+        event.preventDefault();
+
+        const command: RespondToAuthChallengeCommand = new RespondToAuthChallengeCommand({
+            ChallengeName: 'CUSTOM_CHALLENGE',
+            ClientId: '4dr3oaln49e47sqk5dmubleu7n',
+            Session: session,
+            ChallengeResponses: {
+                'USERNAME': email,
+                'ANSWER': otp
+            }
+        });
+
+        try {
+            const response = await client.send(command);
+            console.log('access token:', response.AuthenticationResult.AccessToken);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     const handleAddToCart = () => {
         if (size === '') {
@@ -75,9 +135,30 @@ export default function App() {
         );
     };
 
+    /* return (<div>
+         <form onSubmit={ handleEmailSubmit }>
+             <label>
+                 Email:
+                 <input type="text" value={ email } onChange={ e => setEmail(e.target.value) }/>
+             </label>
+             <label>
+                 Password:
+                 <input type="password" value={ password } onChange={ e => setPassword(e.target.value) }/>
+             </label>
+             <input type="submit" value="Submit"/>
+         </form>
+         <form onSubmit={ handleCodeSubmit }>
+             <label>
+                 OTP:
+                 <input type="text" value={ otp } onChange={ e => setOtp(e.target.value) }/>
+             </label>
+             <input type="submit" value="Submit"/>
+         </form>
+     </div>);*/
+
     return (
         // @ts-expect-error expected
-        <Authenticator services={ services }>
+        <Authenticator services={ services } loginMechanism={ 'email' }>
             { ({
                 signOut,
                 user
@@ -258,6 +339,7 @@ export default function App() {
                     </View></>)
             }
         </Authenticator>);
-}
+};
+
 
 

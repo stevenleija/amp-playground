@@ -16,8 +16,10 @@
         "@aws-amplify/ui-react": "^6.1.12",
         "@aws-crypto/client-node": "~4.0.0",
         "@aws-crypto/sha256-js": "^5.2.0",
+        "@aws-sdk/client-cognito-identity-provider": "~3.583.0",
+        "@aws-sdk/client-ses": "^3.583.0",
         "aws-amplify": "^6.3.4",
-        "aws-sdk": "^2.1629.0",
+        "aws-sdk": "^2.1630.0",
         "crypto-secure-random-digit": "^1.0.10",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
@@ -33,7 +35,7 @@
         "eslint": "^8.57.0",
         "eslint-plugin-react-hooks": "^4.6.2",
         "eslint-plugin-react-refresh": "^0.4.7",
-        "sass": "^1.77.2",
+        "sass": "^1.77.3",
         "typescript": "^5.4.5",
         "vite": "^5.2.12"
     },
