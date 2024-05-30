@@ -17,7 +17,7 @@ __metadata:
   resolution: "ampplaygroundea5deb63ea5deb63CreateAuthChallenge@workspace:."
   dependencies:
     "@types/aws-lambda": "npm:^8.10.138"
-    aws-sdk: "npm:^2.1625.0"
+    aws-sdk: "npm:^2.1630.0"
     crypto-secure-random-digit: "npm:^1.0.10"
   languageName: unknown
   linkType: soft
@@ -31,9 +31,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:^2.1625.0":
-  version: 2.1625.0
-  resolution: "aws-sdk@npm:2.1625.0"
+"aws-sdk@npm:^2.1630.0":
+  version: 2.1630.0
+  resolution: "aws-sdk@npm:2.1630.0"
   dependencies:
     buffer: "npm:4.9.2"
     events: "npm:1.1.1"
@@ -45,7 +45,7 @@ __metadata:
     util: "npm:^0.12.4"
     uuid: "npm:8.0.0"
     xml2js: "npm:0.6.2"
-  checksum: 10c0/405c10444d75aac557c091e148cb1eb005eff30e44192cb2e367c34fc689e50711548d1ab42dfd8ff6f0cfdcbd712c899bc057a109a3b25d5055ee329de9a93f
+  checksum: 10c0/1d2a2b75ca2399f64ecdf38fcff6b4b200502bce427511cdd2b65792160998475c38302a1fe3592e9f5493fac611b24af95f9a1d39942b01660e3aff68be33f8
   languageName: node
   linkType: hard
 

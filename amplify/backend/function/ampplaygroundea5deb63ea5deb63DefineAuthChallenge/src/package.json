@@ -8,6 +8,6 @@
         "crypto-secure-random-digit": "^1.0.10"
     },
     "devDependencies": {
-        "@types/aws-lambda": "^8.10.92"
+        "@types/aws-lambda": "^8.10.138"
     }
 }
